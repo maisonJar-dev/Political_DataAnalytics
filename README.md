@@ -8,8 +8,8 @@ From a csv file, can we predict the cost of computer parts based on their specif
   - [matplotlib](#matplotlib)
   - [pandas ](#pandas)
   - [scikit-learn](#scikit-learn)
-- [Database](#database)
-  - [MySQL](#mysql)
+- [AWS](#aws)
+  - [s3](#s3)
 - [Other Tools](#other-tools)
   - [Tableau](#tableau)
 - [General Pipeline](#general-pipeline)
@@ -24,19 +24,17 @@ From a csv file, can we predict the cost of computer parts based on their specif
 ### scikit-learn
 [Reasoning and uses here]
 
-## Database
-### MySQL
+## AWS
+### S3
 [Reasoning and uses here]
 
 ## Other Tools
 ### Tableau
 
 ## General Pipeline
-1. Extract raw dataset using Python.
-2. Store raw dataset in MySQL (original schema).
-3. Perform cleaning and feature engineering in Python.
-4. Store cleaned dataset in a separate MySQL schema.
-5. Perform EDA (Exploratory Data Analysis) and visualization using Python and Tableau
-6. Train regression models using scikit-learn to predict prices.
+1. Store CSV's, Scripts, Results, and other important files in s3
+2. Perform cleaning and feature engineering in Python.
+4. Perform EDA (Exploratory Data Analysis) and visualization using Python and Tableau
+5. Train regression models using scikit-learn to predict GDP based on democratic-backsliding.
 
 ---
