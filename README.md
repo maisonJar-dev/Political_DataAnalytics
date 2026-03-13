@@ -9,7 +9,7 @@ From a csv file, can we predict the cost of computer parts based on their specif
   - [pandas ](#pandas)
   - [scikit-learn](#scikit-learn)
 - [AWS](#aws)
-  - [s3](#s3)
+  - [S3](#s3)
 - [Other Tools](#other-tools)
   - [Tableau](#tableau)
 - [General Pipeline](#general-pipeline)
