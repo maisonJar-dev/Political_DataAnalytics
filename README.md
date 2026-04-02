@@ -13,6 +13,7 @@ From a csv file, can we predict the cost of computer parts based on their specif
 - [Other Tools](#other-tools)
   - [Tableau](#tableau)
 - [General Pipeline](#general-pipeline)
+- [Useful Resources](#useful-resources)
 
 ## Dependencies 
 ### numpy
@@ -38,3 +39,9 @@ From a csv file, can we predict the cost of computer parts based on their specif
 5. Train regression models using scikit-learn to predict GDP based on democratic-backsliding.
 
 ---
+
+### Useful Resources
+
+[S3 Examples Git Repo](https://github.com/awsdocs/aws-doc-sdk-examples/tree/main/python/example_code/s3#code-examples)
+
+[S3 CSV Access](https://medium.com/@kn.lakshmi948/reading-csv-file-from-amazon-s3-bucket-using-csv-module-in-python-2bd1ed48c0ca)
