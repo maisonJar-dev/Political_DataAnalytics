@@ -26,6 +26,8 @@ class S3Actions:
         df = pd.read_csv(obj['Body'], nrows=5)
     
         print("Column names and types:")
+        pd.set_option('display.max_rows', None)
+        pd.set_option('display.max_columns', None)
         print(df.dtypes)
 
 if __name__ == "__main__":
