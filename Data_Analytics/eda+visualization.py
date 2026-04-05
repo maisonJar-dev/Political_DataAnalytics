@@ -13,8 +13,8 @@ class S3Actions:
         """
         s3 = boto3.client(
             's3',
-            aws_access_key_id='AKIATTX4CQ5J2GXHVDCI',
-            aws_secret_access_key='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',
+            aws_access_key_id='',
+            aws_secret_access_key='',
             region_name='us-east-2'
         )
         # response = s3.list_objects_v2(Bucket='politcal-eda')
