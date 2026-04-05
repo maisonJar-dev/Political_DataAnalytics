@@ -390,6 +390,7 @@
       <column-instance column='[__tableau_internal_object_id__].[V-Dem/V_Dem_Filtered.csv_F78140C76B11456AB3D9A4D91535BAAA]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:V-Dem/V_Dem_Filtered.csv_F78140C76B11456AB3D9A4D91535BAAA:qk]' pivot='key' type='quantitative' />
       <column-instance column='[__tableau_internal_object_id__].[V-Dem/V_Dem_Final_Results.csv_26EF0BDB039449519E71754736B3DAF0]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:V-Dem/V_Dem_Final_Results.csv_26EF0BDB039449519E71754736B3DAF0:qk]' pivot='key' type='quantitative' />
       <column-instance column='[v2x_regime]' derivation='Avg' name='[avg:v2x_regime:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[v2x_polyarchy]' derivation='Count' name='[cnt:v2x_polyarchy:qk]' pivot='key' type='quantitative' />
       <column-instance column='[v2x_regime]' derivation='Count' name='[cnt:v2x_regime:qk]' pivot='key' type='quantitative' />
       <column-instance column='[v2x_regime]' derivation='CountD' name='[ctd:v2x_regime:qk]' pivot='key' type='quantitative' />
       <column-instance column='[v2x_regime]' derivation='Max' name='[max:v2x_regime:qk]' pivot='key' type='quantitative' />
@@ -1619,6 +1620,9 @@
             <map-pri to='multiordinal_blue_10_0'>
               <bucket>&quot;Afghanistan&quot;</bucket>
             </map-pri>
+            <map-pri to='multiordinal_gold_10_0'>
+              <bucket>&quot;Canada&quot;</bucket>
+            </map-pri>
             <map-pri to='multiordinal_green_10_0'>
               <bucket>&quot;France&quot;</bucket>
             </map-pri>
@@ -1629,6 +1633,9 @@
           <encoding attr='color' field='[:Measure Names]' type='palette'>
             <map to='#4e79a7'>
               <bucket>&quot;[federated.0gu589q1uit1a8115yvvo1sdyhhr].[__tableau_internal_object_id__].[cnt:V-Dem/V_Dem_Filtered.csv_F78140C76B11456AB3D9A4D91535BAAA:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.0gu589q1uit1a8115yvvo1sdyhhr].[cnt:v2x_polyarchy:qk]&quot;</bucket>
             </map>
             <map to='#76b7b2'>
               <bucket>&quot;[federated.0gu589q1uit1a8115yvvo1sdyhhr].[avg:v2x_regime:qk]&quot;</bucket>
@@ -1817,6 +1824,66 @@
       </table>
       <simple-id uuid='{54C91737-BD3B-40BF-8C41-EFF6FC92719B}' />
     </worksheet>
+    <worksheet name='GDP_PC_Map'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='V-Dem/V_Dem_Filtered.csv+ (S3)' name='federated.0gu589q1uit1a8115yvvo1sdyhhr' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.0gu589q1uit1a8115yvvo1sdyhhr'>
+            <column-instance column='[e_gdppc]' derivation='Avg' name='[avg:e_gdppc:qk]' pivot='key' type='quantitative' />
+            <column caption='Country Name' datatype='string' name='[country_name]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column aggregation='Count' caption='E Gdppc' datatype='real' name='[e_gdppc]' role='measure' type='quantitative' />
+            <column-instance column='[e_gdppc]' derivation='Max' name='[max:e_gdppc:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[e_gdppc]' derivation='Min' name='[min:e_gdppc:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[country_name]' derivation='None' name='[none:country_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[year]' derivation='None' name='[none:year:qk]' pivot='key' type='quantitative' />
+            <column caption='Year' datatype='date' datatype-customized='true' name='[year]' role='dimension' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.0gu589q1uit1a8115yvvo1sdyhhr].[none:year:qk]' included-values='in-range'>
+            <min>#1900-01-01#</min>
+            <max>#2025-01-01#</max>
+          </filter>
+          <slices>
+            <column>[federated.0gu589q1uit1a8115yvvo1sdyhhr].[none:year:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0gu589q1uit1a8115yvvo1sdyhhr].[Longitude (generated)]' field-type='quantitative' max='27847425.194169246' min='-15184915.722963275' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.0gu589q1uit1a8115yvvo1sdyhhr].[Latitude (generated)]' field-type='quantitative' max='13291445.200158799' min='-8492796.080086885' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.0gu589q1uit1a8115yvvo1sdyhhr].[avg:e_gdppc:qk]' palette='red_green_gold_diverging_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <lod column='[federated.0gu589q1uit1a8115yvvo1sdyhhr].[none:country_name:nk]' />
+              <color column='[federated.0gu589q1uit1a8115yvvo1sdyhhr].[avg:e_gdppc:qk]' />
+              <lod column='[federated.0gu589q1uit1a8115yvvo1sdyhhr].[max:e_gdppc:qk]' />
+              <lod column='[federated.0gu589q1uit1a8115yvvo1sdyhhr].[min:e_gdppc:qk]' />
+              <geometry column='[federated.0gu589q1uit1a8115yvvo1sdyhhr].[Geometry (generated)]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.0gu589q1uit1a8115yvvo1sdyhhr].[Latitude (generated)]</rows>
+        <cols>[federated.0gu589q1uit1a8115yvvo1sdyhhr].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{62EA57A2-AAD6-441B-B0D4-E74A28181209}' />
+    </worksheet>
     <worksheet name='GDP_Rigme'>
       <table>
         <view>
@@ -1874,53 +1941,6 @@
         <cols>[federated.0gu589q1uit1a8115yvvo1sdyhhr].[tyr:year:qk]</cols>
       </table>
       <simple-id uuid='{84EEFD14-CF5C-4536-B5AA-7642EF268B32}' />
-    </worksheet>
-    <worksheet name='GDP_To_Date_Map'>
-      <table>
-        <view>
-          <datasources>
-            <datasource caption='V-Dem/V_Dem_Filtered.csv+ (S3)' name='federated.0gu589q1uit1a8115yvvo1sdyhhr' />
-          </datasources>
-          <mapsources>
-            <mapsource name='Tableau' />
-          </mapsources>
-          <datasource-dependencies datasource='federated.0gu589q1uit1a8115yvvo1sdyhhr'>
-            <column-instance column='[e_gdp]' derivation='Count' name='[cnt:e_gdp:qk]' pivot='key' type='quantitative' />
-            <column caption='Country Name' datatype='string' name='[country_name]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
-            <column aggregation='Count' caption='E Gdp' datatype='real' name='[e_gdp]' role='measure' type='quantitative' />
-            <column-instance column='[country_name]' derivation='None' name='[none:country_name:nk]' pivot='key' type='nominal' />
-          </datasource-dependencies>
-          <aggregation value='true' />
-        </view>
-        <style>
-          <style-rule element='axis'>
-            <encoding attr='space' class='0' field='[federated.0gu589q1uit1a8115yvvo1sdyhhr].[Longitude (generated)]' field-type='quantitative' max='27847425.194169246' min='-15184915.722963275' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
-            <encoding attr='space' class='0' field='[federated.0gu589q1uit1a8115yvvo1sdyhhr].[Latitude (generated)]' field-type='quantitative' max='13291445.200158799' min='-8492796.080086885' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
-          </style-rule>
-          <style-rule element='mark'>
-            <encoding attr='color' field='[federated.0gu589q1uit1a8115yvvo1sdyhhr].[cnt:e_gdp:qk]' palette='tableau-map-temperatur' type='interpolated' />
-          </style-rule>
-          <style-rule element='map'>
-            <format attr='washout' value='0.0' />
-          </style-rule>
-        </style>
-        <panes>
-          <pane selection-relaxation-option='selection-relaxation-allow'>
-            <view>
-              <breakdown value='auto' />
-            </view>
-            <mark class='Automatic' />
-            <encodings>
-              <lod column='[federated.0gu589q1uit1a8115yvvo1sdyhhr].[none:country_name:nk]' />
-              <color column='[federated.0gu589q1uit1a8115yvvo1sdyhhr].[cnt:e_gdp:qk]' />
-              <geometry column='[federated.0gu589q1uit1a8115yvvo1sdyhhr].[Geometry (generated)]' />
-            </encodings>
-          </pane>
-        </panes>
-        <rows>[federated.0gu589q1uit1a8115yvvo1sdyhhr].[Latitude (generated)]</rows>
-        <cols>[federated.0gu589q1uit1a8115yvvo1sdyhhr].[Longitude (generated)]</cols>
-      </table>
-      <simple-id uuid='{62EA57A2-AAD6-441B-B0D4-E74A28181209}' />
     </worksheet>
     <worksheet name='Sheet 6'>
       <table>
@@ -1985,6 +2005,73 @@
     <worksheet name='Sheet 7'>
       <table>
         <view>
+          <datasources>
+            <datasource caption='V-Dem/V_Dem_Filtered.csv+ (S3)' name='federated.0gu589q1uit1a8115yvvo1sdyhhr' />
+          </datasources>
+          <datasource-dependencies datasource='federated.0gu589q1uit1a8115yvvo1sdyhhr'>
+            <column caption='Country Name' datatype='string' name='[country_name]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column aggregation='Count' caption='E Gdppc' datatype='real' name='[e_gdppc]' role='measure' type='quantitative' />
+            <column-instance column='[e_gdppc]' derivation='Max' name='[max:e_gdppc:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[v2x_regime]' derivation='Max' name='[max:v2x_regime:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[country_name]' derivation='None' name='[none:country_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[year]' derivation='Year-Trunc' name='[tyr:year:qk]' pivot='key' type='quantitative' />
+            <column aggregation='Count' caption='V2X Regime' datatype='integer' name='[v2x_regime]' role='measure' type='quantitative' />
+            <column caption='Year' datatype='date' datatype-customized='true' name='[year]' role='dimension' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.0gu589q1uit1a8115yvvo1sdyhhr].[none:country_name:nk]'>
+            <groupfilter function='member' level='[none:country_name:nk]' member='&quot;Canada&quot;' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate' />
+          </filter>
+          <slices>
+            <column>[federated.0gu589q1uit1a8115yvvo1sdyhhr].[none:country_name:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.0gu589q1uit1a8115yvvo1sdyhhr].[max:v2x_regime:qk]' field-type='quantitative' fold='true' scope='rows' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0gu589q1uit1a8115yvvo1sdyhhr].[none:country_name:nk]' />
+              <color column='[federated.0gu589q1uit1a8115yvvo1sdyhhr].[:Measure Names]' />
+            </encodings>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0gu589q1uit1a8115yvvo1sdyhhr].[max:e_gdppc:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0gu589q1uit1a8115yvvo1sdyhhr].[none:country_name:nk]' />
+              <color column='[federated.0gu589q1uit1a8115yvvo1sdyhhr].[:Measure Names]' />
+            </encodings>
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.0gu589q1uit1a8115yvvo1sdyhhr].[max:v2x_regime:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.0gu589q1uit1a8115yvvo1sdyhhr].[none:country_name:nk]' />
+              <color column='[federated.0gu589q1uit1a8115yvvo1sdyhhr].[:Measure Names]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>([federated.0gu589q1uit1a8115yvvo1sdyhhr].[max:e_gdppc:qk] + [federated.0gu589q1uit1a8115yvvo1sdyhhr].[max:v2x_regime:qk])</rows>
+        <cols>[federated.0gu589q1uit1a8115yvvo1sdyhhr].[tyr:year:qk]</cols>
+      </table>
+      <simple-id uuid='{9898EACE-0DEE-4131-975F-8C13627A5020}' />
+    </worksheet>
+    <worksheet name='Sheet 8'>
+      <table>
+        <view>
           <datasources />
           <aggregation value='true' />
         </view>
@@ -2000,7 +2087,7 @@
         <rows />
         <cols />
       </table>
-      <simple-id uuid='{9898EACE-0DEE-4131-975F-8C13627A5020}' />
+      <simple-id uuid='{EA0AF4FC-C2F4-47B0-ACF4-3C07B84B0546}' />
     </worksheet>
     <worksheet name='World_Rigme_Map'>
       <table>
@@ -2044,14 +2131,15 @@
     </worksheet>
   </worksheets>
   <windows source-height='30'>
-    <window class='worksheet' maximized='true' name='GDP_To_Date_Map'>
+    <window class='worksheet' name='GDP_PC_Map'>
       <cards>
         <edge name='left'>
           <strip size='160'>
             <card type='pages' />
             <card type='filters' />
             <card type='marks' />
-            <card pane-specification-id='0' param='[federated.0gu589q1uit1a8115yvvo1sdyhhr].[cnt:e_gdp:qk]' type='color' />
+            <card pane-specification-id='0' param='[federated.0gu589q1uit1a8115yvvo1sdyhhr].[avg:e_gdppc:qk]' type='color' />
+            <card param='[federated.0gu589q1uit1a8115yvvo1sdyhhr].[none:year:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
           </strip>
         </edge>
         <edge name='top'>
@@ -2068,7 +2156,36 @@
       </cards>
       <simple-id uuid='{C6E113D6-53E8-45B1-A40C-019860F223A3}' />
     </window>
-    <window class='worksheet' name='GDP_Over_Years'>
+    <window class='worksheet' name='Sheet 7'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card param='[federated.0gu589q1uit1a8115yvvo1sdyhhr].[none:country_name:nk]' type='filter' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='1' param='[federated.0gu589q1uit1a8115yvvo1sdyhhr].[none:country_name:nk]&#10;[federated.0gu589q1uit1a8115yvvo1sdyhhr].[:Measure Names]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{D026AF9D-BD65-441D-B7EA-E2B581A5CA4A}' />
+    </window>
+    <window class='worksheet' maximized='true' name='GDP_Over_Years'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -2214,7 +2331,7 @@
       </cards>
       <simple-id uuid='{675ABFAA-5625-4F98-A319-76916EAC7DEF}' />
     </window>
-    <window class='worksheet' name='Sheet 7'>
+    <window class='worksheet' name='Sheet 8'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -2235,7 +2352,7 @@
           </strip>
         </edge>
       </cards>
-      <simple-id uuid='{D026AF9D-BD65-441D-B7EA-E2B581A5CA4A}' />
+      <simple-id uuid='{D2A84804-DC23-4812-88A8-711BE1B21FC3}' />
     </window>
   </windows>
 </workbook>
