@@ -1,6 +1,5 @@
 *Authors:* **Maison Gulyas** & **Erkhtuguldur Iderbat**
-# ComputerParts_DataAnalysis
-From a csv file, can we predict the cost of computer parts based on their specifications for 2025
+# V-Dem Dataset Analysis 
 
 # Table of Contents
 - [Dependencies](#dependencies)
