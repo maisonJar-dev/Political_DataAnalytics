@@ -1,4 +1,8 @@
-# V-Dem Political & Economic Predictive Analysis
+
+# V-Dem Political & Economic Predictive Pipeline
+
+
+
 **Authors:** Maison Gulyas & Erkhtuguldur Iderbat 
 
 This project implements an end-to-end data analytics pipeline designed to predict national economic trajectories and democratic stability using the Varieties of Democracy (V-Dem) dataset. By leveraging a cloud-native architecture, we identify "Red Flags" in institutional health that serve as leading indicators for GDP per capita changes and democratic backsliding.
