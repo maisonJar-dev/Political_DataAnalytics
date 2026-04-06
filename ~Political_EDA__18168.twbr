@@ -1,0 +1,2163 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20261.26.0226.1626                               -->
+<workbook original-version='18.1' source-build='2026.1.0 (20261.26.0226.1626)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <AnimationOnByDefault />
+    <MapboxVectorStylesAndLayers />
+    <MarkAnimation />
+    <ObjectModelEncapsulateLegacy />
+    <ObjectModelTableType />
+    <SchemaViewerObjectModel />
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+    <color-palette custom='true' name='Elector_Dem_dif' type='ordered-sequential'>
+      <color>#f70000</color>
+      <color>#f2fa05</color>
+      <color>#05fa2e</color>
+    </color-palette>
+    <color-palette custom='true' name='GDP_PC_Dif' type='ordered-sequential'>
+      <color>#fc0505</color>
+      <color>#fc8105</color>
+      <color>#f7d80a</color>
+      <color>#fc05f8</color>
+      <color>#7e00e6</color>
+    </color-palette>
+    <color-palette custom='true' name='Max_GDP_Dif' type='ordered-sequential'>
+      <color>#fc0f0f</color>
+      <color>#fff708</color>
+      <color>#2fff05</color>
+      <color>#00fc87</color>
+      <color>#00f3f7</color>
+    </color-palette>
+  </preferences>
+  <datasources>
+    <datasource caption='V_Dem_Filtered.csv (Multiple Connections)' inline='true' name='federated.047x84k0bchto01207z4x1aplc1l' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='V_Dem_Filtered' name='textscan.1a0f58u0y2a7m111kpmz618s8wo9'>
+            <connection class='textscan' directory='Data/Political_DataAnalytics' filename='V_Dem_Filtered.csv' password='' server='' />
+          </named-connection>
+          <named-connection caption='V_Dem_Final_Results' name='textscan.0y8tfd906bq05w11j3c0b0d5cafz'>
+            <connection class='textscan' directory='Data/Political_DataAnalytics' filename='V_Dem_Final_Results.csv' password='' server='' />
+          </named-connection>
+        </named-connections>
+        <relation type='collection'>
+          <relation connection='textscan.1a0f58u0y2a7m111kpmz618s8wo9' name='V_Dem_Filtered.csv' table='[V_Dem_Filtered#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_CA' separator=','>
+              <column datatype='date' date-parse-format='yyyy' name='year' ordinal='0' />
+              <column datatype='string' name='country_name' ordinal='1' />
+              <column datatype='integer' name='country_id' ordinal='2' />
+              <column datatype='string' name='country_text_id' ordinal='3' />
+              <column datatype='real' name='v2x_accountability' ordinal='4' />
+              <column datatype='real' name='v2x_civlib' ordinal='5' />
+              <column datatype='real' name='v2x_corr' ordinal='6' />
+              <column datatype='real' name='v2x_electoral_integrity' ordinal='7' />
+              <column datatype='real' name='v2x_polyarchy' ordinal='8' />
+              <column datatype='integer' name='v2x_regime' ordinal='9' />
+              <column datatype='real' name='e_v2xel_locelec_5C' ordinal='10' />
+              <column datatype='real' name='e_wbgi_gee' ordinal='11' />
+              <column datatype='string' name='e_uds' ordinal='12' />
+              <column datatype='real' name='e_gdp' ordinal='13' />
+              <column datatype='real' name='e_gdppc' ordinal='14' />
+              <column datatype='real' name='e_miinflat' ordinal='15' />
+            </columns>
+          </relation>
+          <relation connection='textscan.0y8tfd906bq05w11j3c0b0d5cafz' name='V_Dem_Final_Results.csv' table='[V_Dem_Final_Results#csv]' type='table'>
+            <columns character-set='UTF-8' header='yes' locale='en_CA' separator=','>
+              <column datatype='integer' name='year' ordinal='0' />
+              <column datatype='string' name='country_name' ordinal='1' />
+              <column datatype='real' name='v2x_polyarchy' ordinal='2' />
+              <column datatype='real' name='e_gdppc' ordinal='3' />
+              <column datatype='real' name='predicted_gdp_3yr' ordinal='4' />
+              <column datatype='real' name='backslide_risk_score' ordinal='5' />
+              <column datatype='real' name='dem_change_3yr' ordinal='6' />
+            </columns>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[backslide_risk_score]' value='[V_Dem_Final_Results.csv].[backslide_risk_score]' />
+          <map key='[country_id]' value='[V_Dem_Filtered.csv].[country_id]' />
+          <map key='[country_name (V_Dem_Final_Results.csv)]' value='[V_Dem_Final_Results.csv].[country_name]' />
+          <map key='[country_name]' value='[V_Dem_Filtered.csv].[country_name]' />
+          <map key='[country_text_id]' value='[V_Dem_Filtered.csv].[country_text_id]' />
+          <map key='[dem_change_3yr]' value='[V_Dem_Final_Results.csv].[dem_change_3yr]' />
+          <map key='[e_gdp]' value='[V_Dem_Filtered.csv].[e_gdp]' />
+          <map key='[e_gdppc (V_Dem_Final_Results.csv)]' value='[V_Dem_Final_Results.csv].[e_gdppc]' />
+          <map key='[e_gdppc]' value='[V_Dem_Filtered.csv].[e_gdppc]' />
+          <map key='[e_miinflat]' value='[V_Dem_Filtered.csv].[e_miinflat]' />
+          <map key='[e_uds]' value='[V_Dem_Filtered.csv].[e_uds]' />
+          <map key='[e_v2xel_locelec_5C]' value='[V_Dem_Filtered.csv].[e_v2xel_locelec_5C]' />
+          <map key='[e_wbgi_gee]' value='[V_Dem_Filtered.csv].[e_wbgi_gee]' />
+          <map key='[predicted_gdp_3yr]' value='[V_Dem_Final_Results.csv].[predicted_gdp_3yr]' />
+          <map key='[v2x_accountability]' value='[V_Dem_Filtered.csv].[v2x_accountability]' />
+          <map key='[v2x_civlib]' value='[V_Dem_Filtered.csv].[v2x_civlib]' />
+          <map key='[v2x_corr]' value='[V_Dem_Filtered.csv].[v2x_corr]' />
+          <map key='[v2x_electoral_integrity]' value='[V_Dem_Filtered.csv].[v2x_electoral_integrity]' />
+          <map key='[v2x_polyarchy (V_Dem_Final_Results.csv)]' value='[V_Dem_Final_Results.csv].[v2x_polyarchy]' />
+          <map key='[v2x_polyarchy]' value='[V_Dem_Filtered.csv].[v2x_polyarchy]' />
+          <map key='[v2x_regime]' value='[V_Dem_Filtered.csv].[v2x_regime]' />
+          <map key='[year (V_Dem_Final_Results.csv)]' value='[V_Dem_Final_Results.csv].[year]' />
+          <map key='[year]' value='[V_Dem_Filtered.csv].[year]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[V_Dem_Filtered.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_CA&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[V_Dem_Final_Results.csv]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='character-set'>&quot;UTF-8&quot;</attribute>
+              <attribute datatype='string' name='collation'>&quot;en_GB&quot;</attribute>
+              <attribute datatype='string' name='field-delimiter'>&quot;,&quot;</attribute>
+              <attribute datatype='string' name='header-row'>&quot;true&quot;</attribute>
+              <attribute datatype='string' name='locale'>&quot;en_CA&quot;</attribute>
+              <attribute datatype='string' name='single-char'>&quot;&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>year</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[year]</local-name>
+            <parent-name>[V_Dem_Filtered.csv]</parent-name>
+            <remote-alias>year</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[V_Dem_Filtered.csv_A0E388EE5B6843F29F5E593A677D1E77]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>country_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[country_name]</local-name>
+            <parent-name>[V_Dem_Filtered.csv]</parent-name>
+            <remote-alias>country_name</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[V_Dem_Filtered.csv_A0E388EE5B6843F29F5E593A677D1E77]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>country_id</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[country_id]</local-name>
+            <parent-name>[V_Dem_Filtered.csv]</parent-name>
+            <remote-alias>country_id</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[V_Dem_Filtered.csv_A0E388EE5B6843F29F5E593A677D1E77]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>country_text_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[country_text_id]</local-name>
+            <parent-name>[V_Dem_Filtered.csv]</parent-name>
+            <remote-alias>country_text_id</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[V_Dem_Filtered.csv_A0E388EE5B6843F29F5E593A677D1E77]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>v2x_accountability</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[v2x_accountability]</local-name>
+            <parent-name>[V_Dem_Filtered.csv]</parent-name>
+            <remote-alias>v2x_accountability</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[V_Dem_Filtered.csv_A0E388EE5B6843F29F5E593A677D1E77]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>v2x_civlib</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[v2x_civlib]</local-name>
+            <parent-name>[V_Dem_Filtered.csv]</parent-name>
+            <remote-alias>v2x_civlib</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[V_Dem_Filtered.csv_A0E388EE5B6843F29F5E593A677D1E77]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>v2x_corr</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[v2x_corr]</local-name>
+            <parent-name>[V_Dem_Filtered.csv]</parent-name>
+            <remote-alias>v2x_corr</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[V_Dem_Filtered.csv_A0E388EE5B6843F29F5E593A677D1E77]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>v2x_electoral_integrity</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[v2x_electoral_integrity]</local-name>
+            <parent-name>[V_Dem_Filtered.csv]</parent-name>
+            <remote-alias>v2x_electoral_integrity</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[V_Dem_Filtered.csv_A0E388EE5B6843F29F5E593A677D1E77]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>v2x_polyarchy</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[v2x_polyarchy]</local-name>
+            <parent-name>[V_Dem_Filtered.csv]</parent-name>
+            <remote-alias>v2x_polyarchy</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[V_Dem_Filtered.csv_A0E388EE5B6843F29F5E593A677D1E77]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>v2x_regime</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[v2x_regime]</local-name>
+            <parent-name>[V_Dem_Filtered.csv]</parent-name>
+            <remote-alias>v2x_regime</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[V_Dem_Filtered.csv_A0E388EE5B6843F29F5E593A677D1E77]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>e_v2xel_locelec_5C</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[e_v2xel_locelec_5C]</local-name>
+            <parent-name>[V_Dem_Filtered.csv]</parent-name>
+            <remote-alias>e_v2xel_locelec_5C</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[V_Dem_Filtered.csv_A0E388EE5B6843F29F5E593A677D1E77]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>e_wbgi_gee</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[e_wbgi_gee]</local-name>
+            <parent-name>[V_Dem_Filtered.csv]</parent-name>
+            <remote-alias>e_wbgi_gee</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[V_Dem_Filtered.csv_A0E388EE5B6843F29F5E593A677D1E77]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>e_uds</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[e_uds]</local-name>
+            <parent-name>[V_Dem_Filtered.csv]</parent-name>
+            <remote-alias>e_uds</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <approx-count>1</approx-count>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[V_Dem_Filtered.csv_A0E388EE5B6843F29F5E593A677D1E77]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>e_gdp</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[e_gdp]</local-name>
+            <parent-name>[V_Dem_Filtered.csv]</parent-name>
+            <remote-alias>e_gdp</remote-alias>
+            <ordinal>13</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[V_Dem_Filtered.csv_A0E388EE5B6843F29F5E593A677D1E77]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>e_gdppc</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[e_gdppc]</local-name>
+            <parent-name>[V_Dem_Filtered.csv]</parent-name>
+            <remote-alias>e_gdppc</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[V_Dem_Filtered.csv_A0E388EE5B6843F29F5E593A677D1E77]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>e_miinflat</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[e_miinflat]</local-name>
+            <parent-name>[V_Dem_Filtered.csv]</parent-name>
+            <remote-alias>e_miinflat</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[V_Dem_Filtered.csv_A0E388EE5B6843F29F5E593A677D1E77]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>year</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[year (V_Dem_Final_Results.csv)]</local-name>
+            <parent-name>[V_Dem_Final_Results.csv]</parent-name>
+            <remote-alias>year</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[V_Dem_Final_Results.csv_700E75AEEBFE4613B6E94032F9AB6557]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>country_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[country_name (V_Dem_Final_Results.csv)]</local-name>
+            <parent-name>[V_Dem_Final_Results.csv]</parent-name>
+            <remote-alias>country_name</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <scale>1</scale>
+            <width>1073741823</width>
+            <contains-null>true</contains-null>
+            <collation flag='0' name='LEN_RGB' />
+            <object-id>[V_Dem_Final_Results.csv_700E75AEEBFE4613B6E94032F9AB6557]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>v2x_polyarchy</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[v2x_polyarchy (V_Dem_Final_Results.csv)]</local-name>
+            <parent-name>[V_Dem_Final_Results.csv]</parent-name>
+            <remote-alias>v2x_polyarchy</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[V_Dem_Final_Results.csv_700E75AEEBFE4613B6E94032F9AB6557]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>e_gdppc</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[e_gdppc (V_Dem_Final_Results.csv)]</local-name>
+            <parent-name>[V_Dem_Final_Results.csv]</parent-name>
+            <remote-alias>e_gdppc</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[V_Dem_Final_Results.csv_700E75AEEBFE4613B6E94032F9AB6557]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>predicted_gdp_3yr</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[predicted_gdp_3yr]</local-name>
+            <parent-name>[V_Dem_Final_Results.csv]</parent-name>
+            <remote-alias>predicted_gdp_3yr</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[V_Dem_Final_Results.csv_700E75AEEBFE4613B6E94032F9AB6557]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>backslide_risk_score</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[backslide_risk_score]</local-name>
+            <parent-name>[V_Dem_Final_Results.csv]</parent-name>
+            <remote-alias>backslide_risk_score</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[V_Dem_Final_Results.csv_700E75AEEBFE4613B6E94032F9AB6557]</object-id>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>dem_change_3yr</remote-name>
+            <remote-type>5</remote-type>
+            <local-name>[dem_change_3yr]</local-name>
+            <parent-name>[V_Dem_Final_Results.csv]</parent-name>
+            <remote-alias>dem_change_3yr</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>real</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <object-id>[V_Dem_Final_Results.csv_700E75AEEBFE4613B6E94032F9AB6557]</object-id>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column caption='V_Dem_Filtered.csv' datatype='table' name='[__tableau_internal_object_id__].[V_Dem_Filtered.csv_A0E388EE5B6843F29F5E593A677D1E77]' role='measure' type='quantitative' />
+      <column caption='V_Dem_Final_Results.csv' datatype='table' name='[__tableau_internal_object_id__].[V_Dem_Final_Results.csv_700E75AEEBFE4613B6E94032F9AB6557]' role='measure' type='quantitative' />
+      <column caption='Backslide Risk Score' datatype='real' name='[backslide_risk_score]' role='measure' type='quantitative' />
+      <column caption='Country Id' datatype='integer' name='[country_id]' role='dimension' type='ordinal' />
+      <column caption='country name (V Dem Final Results.csv)' datatype='string' name='[country_name (V_Dem_Final_Results.csv)]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='Country Name' datatype='string' name='[country_name]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='Country Text Id' datatype='string' name='[country_text_id]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+      <column caption='Dem Change 3Yr' datatype='real' name='[dem_change_3yr]' role='dimension' type='quantitative' />
+      <column caption='E Gdp' datatype='real' name='[e_gdp]' role='measure' type='quantitative' />
+      <column caption='e gdppc (V Dem Final Results.csv)' datatype='real' name='[e_gdppc (V_Dem_Final_Results.csv)]' role='measure' type='quantitative' />
+      <column caption='E Gdppc' datatype='real' name='[e_gdppc]' role='measure' type='quantitative' />
+      <column caption='E Miinflat' datatype='real' name='[e_miinflat]' role='measure' type='quantitative' />
+      <column caption='E Uds' datatype='string' name='[e_uds]' role='dimension' type='nominal' />
+      <column caption='e v2xel locelec 5C' datatype='real' name='[e_v2xel_locelec_5C]' role='measure' type='quantitative' />
+      <column caption='E Wbgi Gee' datatype='real' name='[e_wbgi_gee]' role='measure' type='quantitative' />
+      <column caption='Predicted Gdp 3Yr' datatype='real' name='[predicted_gdp_3yr]' role='dimension' type='quantitative' />
+      <column caption='V2X Accountability' datatype='real' name='[v2x_accountability]' role='measure' type='quantitative' />
+      <column caption='V2X Civlib' datatype='real' name='[v2x_civlib]' role='measure' type='quantitative' />
+      <column caption='V2X Corr' datatype='real' name='[v2x_corr]' role='measure' type='quantitative' />
+      <column caption='V2X Electoral Integrity' datatype='real' name='[v2x_electoral_integrity]' role='measure' type='quantitative' />
+      <column caption='v2x polyarchy (V Dem Final Results.csv)' datatype='real' name='[v2x_polyarchy (V_Dem_Final_Results.csv)]' role='measure' type='quantitative' />
+      <column caption='V2X Polyarchy' datatype='real' name='[v2x_polyarchy]' role='measure' type='quantitative' />
+      <column caption='V2X Regime' datatype='integer' name='[v2x_regime]' role='measure' type='quantitative' />
+      <column caption='year (V Dem Final Results.csv)' datatype='integer' name='[year (V_Dem_Final_Results.csv)]' role='dimension' type='quantitative' />
+      <column caption='Year' datatype='date' name='[year]' role='dimension' type='quantitative' />
+      <column-instance column='[__tableau_internal_object_id__].[V_Dem_Filtered.csv_A0E388EE5B6843F29F5E593A677D1E77]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:V_Dem_Filtered.csv_A0E388EE5B6843F29F5E593A677D1E77:ok]' pivot='key' type='ordinal' />
+      <column-instance column='[dem_change_3yr]' derivation='Avg' name='[avg:dem_change_3yr:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[e_gdp]' derivation='Avg' name='[avg:e_gdp:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[e_gdppc]' derivation='Avg' name='[avg:e_gdppc:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[predicted_gdp_3yr]' derivation='Avg' name='[avg:predicted_gdp_3yr:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[v2x_polyarchy]' derivation='Avg' name='[avg:v2x_polyarchy:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[v2x_regime]' derivation='Avg' name='[avg:v2x_regime:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[e_gdppc]' derivation='Count' name='[cnt:e_gdppc:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[e_gdppc]' derivation='Max' name='[max:e_gdppc:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[v2x_polyarchy]' derivation='Max' name='[max:v2x_polyarchy:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[e_gdppc]' derivation='Median' name='[med:e_gdppc:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[country_name]' derivation='None' name='[none:country_name:nk]' pivot='key' type='nominal' />
+      <column-instance column='[e_gdppc]' derivation='None' name='[none:e_gdppc:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[v2x_polyarchy]' derivation='None' name='[none:v2x_polyarchy:qk]' pivot='key' type='quantitative' />
+      <column-instance aggregation-param='5' column='[e_gdppc]' derivation='Percentile' name='[prc5:e_gdppc:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[e_gdp]' derivation='Sum' name='[sum:e_gdp:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[v2x_polyarchy]' derivation='Sum' name='[sum:v2x_polyarchy:qk]' pivot='key' type='quantitative' />
+      <column-instance column='[year]' derivation='Year-Trunc' name='[tyr:year:qk]' pivot='key' type='quantitative' />
+      <group hidden='true' name='[Exclusions (Country Name,YEAR(Year))]' name-style='unqualified' user:auto-column='exclude'>
+        <groupfilter function='crossjoin'>
+          <groupfilter function='level-members' level='[none:country_name:nk]' />
+          <groupfilter function='level-members' level='[tyr:year:qk]' />
+        </groupfilter>
+      </group>
+      <layout common-percentage='1' dim-ordering='alphabetic' measure-ordering='alphabetic' show-structure='true' user-set-layout-v2='true' />
+      <style>
+        <style-rule element='mark'>
+          <encoding attr='color' field='[none:country_name:nk]' type='palette'>
+            <map to='#499894'>
+              <bucket>&quot;Azerbaijan&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Cameroon&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;El Salvador&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Hamburg&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Kenya&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Mecklenburg Schwerin&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Oman&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Rwanda&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Sri Lanka&quot;</bucket>
+            </map>
+            <map to='#499894'>
+              <bucket>&quot;Ukraine&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Afghanistan&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Botswana&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Cyprus&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Germany&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Ireland&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Madagascar&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;New Zealand&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Piedmont-Sardinia&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Solomon Islands&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Togo&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;Zanzibar&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Argentina&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Burkina Faso&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Djibouti&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Guinea&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Jamaica&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Mali&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;North Korea&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Republic of the Congo&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;South Korea&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;Turkmenistan&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Barbados&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Chad&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Eswatini&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Honduras&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Laos&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Mongolia&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Palestine/West Bank&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Saxony&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Switzerland&quot;</bucket>
+            </map>
+            <map to='#79706e'>
+              <bucket>&quot;Uruguay&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Baden&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Canada&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Equatorial Guinea&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Hanover&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Kosovo&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Mexico&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Pakistan&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Sao Tome and Principe&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;Sudan&quot;</bucket>
+            </map>
+            <map to='#86bcb6'>
+              <bucket>&quot;United Arab Emirates&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Armenia&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Burma/Myanmar&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Dominican Republic&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Guinea-Bissau&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Japan&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Malta&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;North Macedonia&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Republic of Vietnam&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;South Sudan&quot;</bucket>
+            </map>
+            <map to='#8cd17d'>
+              <bucket>&quot;Tuscany&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Bolivia&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Croatia&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Georgia&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Iran&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Lithuania&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Nepal&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Peru&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Slovakia&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;The Gambia&quot;</bucket>
+            </map>
+            <map to='#9d7660'>
+              <bucket>&quot;Yemen&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Albania&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Brazil&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Czechia&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Ghana&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Israel&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Malawi&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Nicaragua&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Poland&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Somalia&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Trinidad and Tobago&quot;</bucket>
+            </map>
+            <map to='#a0cbe8'>
+              <bucket>&quot;Zimbabwe&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Benin&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Comoros&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;France&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;India&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Liberia&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Namibia&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Paraguay&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Sierra Leone&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Tanzania&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;Vietnam&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Australia&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Burundi&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Ecuador&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Guyana&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Jordan&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Mauritania&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Norway&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Romania&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;South Yemen&quot;</bucket>
+            </map>
+            <map to='#b6992d'>
+              <bucket>&quot;Two Sicilies&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Bavaria&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Chile&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Ethiopia&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Hong Kong&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Latvia&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Montenegro&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Panama&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Senegal&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Syria&quot;</bucket>
+            </map>
+            <map to='#bab0ac'>
+              <bucket>&quot;Uzbekistan&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Belarus&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;China&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Fiji&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Hungary&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Lebanon&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Morocco&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Papal States&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Serbia&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Taiwan&quot;</bucket>
+            </map>
+            <map to='#d37295'>
+              <bucket>&quot;Vanuatu&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Bhutan&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Costa Rica&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Gabon&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Indonesia&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Libya&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Nassau&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Parma&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Singapore&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Thailand&quot;</bucket>
+            </map>
+            <map to='#d4a6c8'>
+              <bucket>&quot;Würtemberg&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Bosnia and Herzegovina&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Cuba&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;German Democratic Republic&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Iraq&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Luxembourg&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Netherlands&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Philippines&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Slovenia&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Timor-Leste&quot;</bucket>
+            </map>
+            <map to='#d7b5a6'>
+              <bucket>&quot;Zambia&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Bahrain&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Cape Verde&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Eritrea&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Hesse-Darmstadt&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Kuwait&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Modena&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Palestine/British Mandate&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Saudi Arabia&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;Suriname&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;United Kingdom&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Austria&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Cambodia&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Egypt&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Haiti&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Kazakhstan&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Mauritius&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Oldenburg&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Russia&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Spain&quot;</bucket>
+            </map>
+            <map to='#f1ce63'>
+              <bucket>&quot;Uganda&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Algeria&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Brunswick&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Democratic Republic of the Congo&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Greece&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Italy&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Malaysia&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Niger&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Portugal&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Somaliland&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;Tunisia&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Belgium&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Colombia&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Finland&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Iceland&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Lesotho&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Mozambique&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Papua New Guinea&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Seychelles&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Tajikistan&quot;</bucket>
+            </map>
+            <map to='#fabfd2'>
+              <bucket>&quot;Venezuela&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Bangladesh&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Central African Republic&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Estonia&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Hesse-Kassel&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Kyrgyzstan&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Moldova&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Palestine/Gaza&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Saxe-Weimar-Eisenach&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;Sweden&quot;</bucket>
+            </map>
+            <map to='#ff9d9a'>
+              <bucket>&quot;United States of America&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Angola&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Bulgaria&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Denmark&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Guatemala&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Ivory Coast&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Maldives&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Nigeria&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Qatar&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;South Africa&quot;</bucket>
+            </map>
+            <map to='#ffbe7d'>
+              <bucket>&quot;Türkiye&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[:Measure Names]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.047x84k0bchto01207z4x1aplc1l].[avg:e_gdppc:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.047x84k0bchto01207z4x1aplc1l].[cnt:e_gdppc:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.047x84k0bchto01207z4x1aplc1l].[max:e_gdppc:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.047x84k0bchto01207z4x1aplc1l].[med:e_gdppc:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.047x84k0bchto01207z4x1aplc1l].[none:e_gdppc:qk]&quot;</bucket>
+            </map>
+            <map to='#4e79a7'>
+              <bucket>&quot;[federated.047x84k0bchto01207z4x1aplc1l].[prc5:e_gdppc:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.047x84k0bchto01207z4x1aplc1l].[avg:v2x_polyarchy:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.047x84k0bchto01207z4x1aplc1l].[max:v2x_polyarchy:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.047x84k0bchto01207z4x1aplc1l].[none:v2x_polyarchy:qk]&quot;</bucket>
+            </map>
+            <map to='#59a14f'>
+              <bucket>&quot;[federated.047x84k0bchto01207z4x1aplc1l].[sum:v2x_polyarchy:qk]&quot;</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>&quot;[federated.047x84k0bchto01207z4x1aplc1l]&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;[federated.047x84k0bchto01207z4x1aplc1l].[avg:e_gdp:qk]&quot;</bucket>
+            </map>
+            <map to='#b07aa1'>
+              <bucket>&quot;[federated.047x84k0bchto01207z4x1aplc1l].[sum:e_gdp:qk]&quot;</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>&quot;[federated.047x84k0bchto01207z4x1aplc1l].[avg:predicted_gdp_3yr:qk]&quot;</bucket>
+            </map>
+            <map to='#edc948'>
+              <bucket>&quot;[federated.047x84k0bchto01207z4x1aplc1l].[avg:dem_change_3yr:qk]&quot;</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>&quot;[federated.047x84k0bchto01207z4x1aplc1l].[avg:v2x_regime:qk]&quot;</bucket>
+            </map>
+          </encoding>
+          <encoding attr='color' field='[:Measure Names]&#10;[none:country_name:nk]' type='palette'>
+            <map-pri to='multiordinal_blue_10_0'>
+              <bucket>&quot;[federated.047x84k0bchto01207z4x1aplc1l].[avg:e_gdp:qk]&quot;</bucket>
+            </map-pri>
+            <map-pri to='multiordinal_blue_10_0'>
+              <bucket>&quot;[federated.047x84k0bchto01207z4x1aplc1l].[sum:e_gdp:qk]&quot;</bucket>
+            </map-pri>
+          </encoding>
+          <encoding attr='color' field='[__tableau_internal_object_id__].[cnt:V_Dem_Filtered.csv_A0E388EE5B6843F29F5E593A677D1E77:ok]' type='palette'>
+            <map to='#4e79a7'>
+              <bucket>1</bucket>
+            </map>
+            <map to='#76b7b2'>
+              <bucket>19</bucket>
+            </map>
+            <map to='#e15759'>
+              <bucket>15</bucket>
+            </map>
+            <map to='#f28e2b'>
+              <bucket>26</bucket>
+            </map>
+          </encoding>
+        </style-rule>
+      </style>
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;Canada&quot;' />
+      </semantic-values>
+      <object-graph>
+        <objects>
+          <object caption='V_Dem_Filtered.csv' id='V_Dem_Filtered.csv_A0E388EE5B6843F29F5E593A677D1E77'>
+            <properties context=''>
+              <relation connection='textscan.1a0f58u0y2a7m111kpmz618s8wo9' name='V_Dem_Filtered.csv' table='[V_Dem_Filtered#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_CA' separator=','>
+                  <column datatype='date' date-parse-format='yyyy' name='year' ordinal='0' />
+                  <column datatype='string' name='country_name' ordinal='1' />
+                  <column datatype='integer' name='country_id' ordinal='2' />
+                  <column datatype='string' name='country_text_id' ordinal='3' />
+                  <column datatype='real' name='v2x_accountability' ordinal='4' />
+                  <column datatype='real' name='v2x_civlib' ordinal='5' />
+                  <column datatype='real' name='v2x_corr' ordinal='6' />
+                  <column datatype='real' name='v2x_electoral_integrity' ordinal='7' />
+                  <column datatype='real' name='v2x_polyarchy' ordinal='8' />
+                  <column datatype='integer' name='v2x_regime' ordinal='9' />
+                  <column datatype='real' name='e_v2xel_locelec_5C' ordinal='10' />
+                  <column datatype='real' name='e_wbgi_gee' ordinal='11' />
+                  <column datatype='string' name='e_uds' ordinal='12' />
+                  <column datatype='real' name='e_gdp' ordinal='13' />
+                  <column datatype='real' name='e_gdppc' ordinal='14' />
+                  <column datatype='real' name='e_miinflat' ordinal='15' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+          <object caption='V_Dem_Final_Results.csv' id='V_Dem_Final_Results.csv_700E75AEEBFE4613B6E94032F9AB6557'>
+            <properties context=''>
+              <relation connection='textscan.0y8tfd906bq05w11j3c0b0d5cafz' name='V_Dem_Final_Results.csv' table='[V_Dem_Final_Results#csv]' type='table'>
+                <columns character-set='UTF-8' header='yes' locale='en_CA' separator=','>
+                  <column datatype='integer' name='year' ordinal='0' />
+                  <column datatype='string' name='country_name' ordinal='1' />
+                  <column datatype='real' name='v2x_polyarchy' ordinal='2' />
+                  <column datatype='real' name='e_gdppc' ordinal='3' />
+                  <column datatype='real' name='predicted_gdp_3yr' ordinal='4' />
+                  <column datatype='real' name='backslide_risk_score' ordinal='5' />
+                  <column datatype='real' name='dem_change_3yr' ordinal='6' />
+                </columns>
+              </relation>
+            </properties>
+          </object>
+        </objects>
+        <relationships>
+          <relationship>
+            <expression op='='>
+              <expression op='[country_name]' />
+              <expression op='[country_name (V_Dem_Final_Results.csv)]' />
+            </expression>
+            <first-end-point object-id='V_Dem_Filtered.csv_A0E388EE5B6843F29F5E593A677D1E77' />
+            <second-end-point object-id='V_Dem_Final_Results.csv_700E75AEEBFE4613B6E94032F9AB6557' />
+          </relationship>
+        </relationships>
+      </object-graph>
+    </datasource>
+  </datasources>
+  <mapsources>
+    <mapsource name='Tableau' />
+  </mapsources>
+  <worksheets>
+    <worksheet name='21st_C_AVG_GDP_PC_Map'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='V_Dem_Filtered.csv (Multiple Connections)' name='federated.047x84k0bchto01207z4x1aplc1l' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.047x84k0bchto01207z4x1aplc1l'>
+            <column-instance column='[e_gdppc]' derivation='Avg' name='[avg:e_gdppc:qk]' pivot='key' type='quantitative' />
+            <column caption='Country Name' datatype='string' name='[country_name]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='E Gdppc' datatype='real' name='[e_gdppc]' role='measure' type='quantitative' />
+            <column-instance column='[country_name]' derivation='None' name='[none:country_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[year]' derivation='None' name='[none:year:qk]' pivot='key' type='quantitative' />
+            <column caption='Year' datatype='date' name='[year]' role='dimension' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='quantitative' column='[federated.047x84k0bchto01207z4x1aplc1l].[none:year:qk]' included-values='in-range'>
+            <min>#2000-01-01#</min>
+            <max>#2025-01-01#</max>
+          </filter>
+          <slices>
+            <column>[federated.047x84k0bchto01207z4x1aplc1l].[none:year:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.047x84k0bchto01207z4x1aplc1l].[Longitude (generated)]' field-type='quantitative' max='37284263.830798149' min='-41039868.935026973' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.047x84k0bchto01207z4x1aplc1l].[Latitude (generated)]' field-type='quantitative' max='23436928.732180849' min='-14712112.046293616' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.047x84k0bchto01207z4x1aplc1l].[avg:e_gdppc:qk]' palette='GDP_PC_Dif' type='interpolated' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.047x84k0bchto01207z4x1aplc1l].[avg:e_gdppc:qk]' />
+              <lod column='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]' />
+              <geometry column='[federated.047x84k0bchto01207z4x1aplc1l].[Geometry (generated)]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.047x84k0bchto01207z4x1aplc1l].[Latitude (generated)]</rows>
+        <cols>[federated.047x84k0bchto01207z4x1aplc1l].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{672B151D-7869-4C20-B353-AB1B1A97E144}' />
+    </worksheet>
+    <worksheet name='Countries_GDP_Years'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='V_Dem_Filtered.csv (Multiple Connections)' name='federated.047x84k0bchto01207z4x1aplc1l' />
+          </datasources>
+          <datasource-dependencies datasource='federated.047x84k0bchto01207z4x1aplc1l'>
+            <column-instance column='[e_gdp]' derivation='Avg' name='[avg:e_gdp:qk]' pivot='key' type='quantitative' />
+            <column caption='Country Name' datatype='string' name='[country_name]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='E Gdp' datatype='real' name='[e_gdp]' role='measure' type='quantitative' />
+            <column caption='E Gdppc' datatype='real' name='[e_gdppc]' role='measure' type='quantitative' />
+            <column-instance column='[country_name]' derivation='None' name='[none:country_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[e_gdppc]' derivation='Sum' name='[sum:e_gdppc:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[year]' derivation='Year-Trunc' name='[tyr:year:qk]' pivot='key' type='quantitative' />
+            <column caption='Year' datatype='date' name='[year]' role='dimension' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='cell-w' value='20' />
+            <format attr='cell-h' value='20' />
+            <format attr='cell' value='20' />
+            <format attr='cell-q' value='100' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.047x84k0bchto01207z4x1aplc1l].[sum:e_gdppc:qk]' palette='red_green_diverging_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <lod column='[federated.047x84k0bchto01207z4x1aplc1l].[sum:e_gdppc:qk]' />
+              <color column='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='size' value='1.7999999523162842' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.047x84k0bchto01207z4x1aplc1l].[avg:e_gdp:qk]</rows>
+        <cols>[federated.047x84k0bchto01207z4x1aplc1l].[tyr:year:qk]</cols>
+      </table>
+      <simple-id uuid='{76F5E932-C933-48C2-8672-BB82979FF061}' />
+    </worksheet>
+    <worksheet name='Dem_Trends'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='V_Dem_Filtered.csv (Multiple Connections)' name='federated.047x84k0bchto01207z4x1aplc1l' />
+          </datasources>
+          <datasource-dependencies datasource='federated.047x84k0bchto01207z4x1aplc1l'>
+            <column-instance column='[v2x_polyarchy]' derivation='Avg' name='[avg:v2x_polyarchy:qk]' pivot='key' type='quantitative' />
+            <column caption='Country Name' datatype='string' name='[country_name]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column-instance column='[country_name]' derivation='None' name='[none:country_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[year]' derivation='Year-Trunc' name='[tyr:year:qk]' pivot='key' type='quantitative' />
+            <column caption='V2X Polyarchy' datatype='real' name='[v2x_polyarchy]' role='measure' type='quantitative' />
+            <column caption='Year' datatype='date' name='[year]' role='dimension' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;Canada&quot;' />
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;Iran&quot;' />
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;Mongolia&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]' />
+            </encodings>
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+          </pane>
+        </panes>
+        <rows>[federated.047x84k0bchto01207z4x1aplc1l].[avg:v2x_polyarchy:qk]</rows>
+        <cols>[federated.047x84k0bchto01207z4x1aplc1l].[tyr:year:qk]</cols>
+      </table>
+      <simple-id uuid='{CD15BF9B-6EA5-458C-B68E-241ECE22C8BF}' />
+    </worksheet>
+    <worksheet name='Elect_Dem_Score_Map'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='V_Dem_Filtered.csv (Multiple Connections)' name='federated.047x84k0bchto01207z4x1aplc1l' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.047x84k0bchto01207z4x1aplc1l'>
+            <column-instance column='[v2x_polyarchy]' derivation='Avg' name='[avg:v2x_polyarchy:qk]' pivot='key' type='quantitative' />
+            <column caption='Country Name' datatype='string' name='[country_name]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column-instance column='[country_name]' derivation='None' name='[none:country_name:nk]' pivot='key' type='nominal' />
+            <column caption='V2X Polyarchy' datatype='real' name='[v2x_polyarchy]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.047x84k0bchto01207z4x1aplc1l].[Longitude (generated)]' field-type='quantitative' max='24100049.085061841' min='-18388033.745465867' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.047x84k0bchto01207z4x1aplc1l].[Latitude (generated)]' field-type='quantitative' max='15599144.623999741' min='-5909577.1463927589' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.047x84k0bchto01207z4x1aplc1l].[avg:v2x_polyarchy:qk]' palette='Elector_Dem_dif' type='interpolated' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <lod column='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]' />
+              <color column='[federated.047x84k0bchto01207z4x1aplc1l].[avg:v2x_polyarchy:qk]' />
+              <geometry column='[federated.047x84k0bchto01207z4x1aplc1l].[Geometry (generated)]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.047x84k0bchto01207z4x1aplc1l].[Latitude (generated)]</rows>
+        <cols>[federated.047x84k0bchto01207z4x1aplc1l].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{3DEFCF25-CFDF-4F10-A19B-2178560812BB}' />
+    </worksheet>
+    <worksheet name='Electoral_Dem_Index'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='V_Dem_Filtered.csv (Multiple Connections)' name='federated.047x84k0bchto01207z4x1aplc1l' />
+          </datasources>
+          <datasource-dependencies datasource='federated.047x84k0bchto01207z4x1aplc1l'>
+            <column-instance column='[v2x_polyarchy]' derivation='Avg' name='[avg:v2x_polyarchy:qk]' pivot='key' type='quantitative' />
+            <column caption='Country Name' datatype='string' name='[country_name]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column-instance column='[country_name]' derivation='None' name='[none:country_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[year]' derivation='Year-Trunc' name='[tyr:year:qk]' pivot='key' type='quantitative' />
+            <column caption='V2X Polyarchy' datatype='real' name='[v2x_polyarchy]' role='measure' type='quantitative' />
+            <column caption='Year' datatype='date' name='[year]' role='dimension' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;Afghanistan&quot;' />
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;Germany&quot;' />
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;Hungary&quot;' />
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;Iran&quot;' />
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;Iraq&quot;' />
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;Israel&quot;' />
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;Japan&quot;' />
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;Mongolia&quot;' />
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;North Korea&quot;' />
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;Russia&quot;' />
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;Ukraine&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.047x84k0bchto01207z4x1aplc1l].[avg:v2x_polyarchy:qk]</rows>
+        <cols>[federated.047x84k0bchto01207z4x1aplc1l].[tyr:year:qk]</cols>
+      </table>
+      <simple-id uuid='{258A7884-4A08-43CA-98BC-58EEDC18EBB2}' />
+    </worksheet>
+    <worksheet name='GDP_PC_Dem_Bar'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='V_Dem_Filtered.csv (Multiple Connections)' name='federated.047x84k0bchto01207z4x1aplc1l' />
+          </datasources>
+          <datasource-dependencies datasource='federated.047x84k0bchto01207z4x1aplc1l'>
+            <column-instance column='[v2x_polyarchy]' derivation='Avg' name='[avg:v2x_polyarchy:qk]' pivot='key' type='quantitative' />
+            <column caption='Country Id' datatype='integer' name='[country_id]' role='dimension' type='ordinal' />
+            <column caption='Country Name' datatype='string' name='[country_name]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='E Gdppc' datatype='real' name='[e_gdppc]' role='measure' type='quantitative' />
+            <column-instance column='[country_id]' derivation='None' name='[none:country_id:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[country_name]' derivation='None' name='[none:country_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[e_gdppc]' derivation='Sum' name='[sum:e_gdppc:qk]' pivot='key' type='quantitative' />
+            <column caption='V2X Polyarchy' datatype='real' name='[v2x_polyarchy]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.047x84k0bchto01207z4x1aplc1l].[avg:v2x_polyarchy:qk]' palette='red_green_diverging_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.047x84k0bchto01207z4x1aplc1l].[avg:v2x_polyarchy:qk]' />
+              <lod column='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.047x84k0bchto01207z4x1aplc1l].[sum:e_gdppc:qk]</rows>
+        <cols>[federated.047x84k0bchto01207z4x1aplc1l].[none:country_id:ok]</cols>
+      </table>
+      <simple-id uuid='{C30A350E-206C-4219-8650-DD503AA05C39}' />
+    </worksheet>
+    <worksheet name='GDP_PC_Regime_Scatter'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='V_Dem_Filtered.csv (Multiple Connections)' name='federated.047x84k0bchto01207z4x1aplc1l' />
+          </datasources>
+          <datasource-dependencies datasource='federated.047x84k0bchto01207z4x1aplc1l'>
+            <column caption='V_Dem_Filtered.csv' datatype='table' name='[__tableau_internal_object_id__].[V_Dem_Filtered.csv_A0E388EE5B6843F29F5E593A677D1E77]' role='measure' type='quantitative' />
+            <column-instance column='[__tableau_internal_object_id__].[V_Dem_Filtered.csv_A0E388EE5B6843F29F5E593A677D1E77]' derivation='Count' name='[__tableau_internal_object_id__].[cnt:V_Dem_Filtered.csv_A0E388EE5B6843F29F5E593A677D1E77:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[e_gdppc]' derivation='Avg' name='[avg:e_gdppc:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[v2x_regime]' derivation='Avg' name='[avg:v2x_regime:qk]' pivot='key' type='quantitative' />
+            <column caption='Country Name' datatype='string' name='[country_name]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='E Gdppc' datatype='real' name='[e_gdppc]' role='measure' type='quantitative' />
+            <column-instance column='[country_name]' derivation='None' name='[none:country_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[year]' derivation='None' name='[none:year:qk]' pivot='key' type='quantitative' />
+            <column caption='V2X Regime' datatype='integer' name='[v2x_regime]' role='measure' type='quantitative' />
+            <column caption='Year' datatype='date' name='[year]' role='dimension' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]'>
+            <groupfilter function='level-members' level='[none:country_name:nk]' user:ui-enumeration='all' user:ui-marker='enumerate' />
+          </filter>
+          <filter class='quantitative' column='[federated.047x84k0bchto01207z4x1aplc1l].[none:year:qk]' included-values='in-range'>
+            <min>#2000-01-01#</min>
+            <max>#2025-01-01#</max>
+          </filter>
+          <slices>
+            <column>[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]</column>
+            <column>[federated.047x84k0bchto01207z4x1aplc1l].[none:year:qk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.047x84k0bchto01207z4x1aplc1l].[avg:v2x_regime:qk]' palette='red_green_diverging_10_0' type='interpolated' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <size column='[federated.047x84k0bchto01207z4x1aplc1l].[avg:v2x_regime:qk]' />
+              <color column='[federated.047x84k0bchto01207z4x1aplc1l].[__tableau_internal_object_id__].[cnt:V_Dem_Filtered.csv_A0E388EE5B6843F29F5E593A677D1E77:ok]' />
+              <lod column='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]' />
+            </encodings>
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+          </pane>
+        </panes>
+        <rows>[federated.047x84k0bchto01207z4x1aplc1l].[avg:v2x_regime:qk]</rows>
+        <cols>[federated.047x84k0bchto01207z4x1aplc1l].[avg:e_gdppc:qk]</cols>
+      </table>
+      <simple-id uuid='{B86DF12D-3B7E-40CA-81E8-D6F647FEA246}' />
+    </worksheet>
+    <worksheet name='GDP_PC_Trends'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='V_Dem_Filtered.csv (Multiple Connections)' name='federated.047x84k0bchto01207z4x1aplc1l' />
+          </datasources>
+          <datasource-dependencies datasource='federated.047x84k0bchto01207z4x1aplc1l'>
+            <column caption='Country Id' datatype='integer' name='[country_id]' role='dimension' type='ordinal' />
+            <column caption='Country Name' datatype='string' name='[country_name]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='E Gdppc' datatype='real' name='[e_gdppc]' role='measure' type='quantitative' />
+            <column-instance column='[country_id]' derivation='None' name='[none:country_id:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[country_name]' derivation='None' name='[none:country_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[e_gdppc]' derivation='None' name='[none:e_gdppc:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[year]' derivation='Year-Trunc' name='[tyr:year:qk]' pivot='key' type='quantitative' />
+            <column caption='Year' datatype='date' name='[year]' role='dimension' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;Canada&quot;' />
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;Iran&quot;' />
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;Mongolia&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Line' />
+            <encodings>
+              <lod column='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_id:ok]' />
+              <color column='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]' />
+            </encodings>
+            <trendline enable-confidence-bands='false' enable-instant-analytics='true' enabled='true' exclude-color='false' exclude-intercept='false' fit='linear' />
+          </pane>
+        </panes>
+        <rows>[federated.047x84k0bchto01207z4x1aplc1l].[none:e_gdppc:qk]</rows>
+        <cols>[federated.047x84k0bchto01207z4x1aplc1l].[tyr:year:qk]</cols>
+      </table>
+      <simple-id uuid='{D978557D-0AC9-41CF-95DF-446B56D2494A}' />
+    </worksheet>
+    <worksheet name='GDP_Polyarchy_Lines'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='V_Dem_Filtered.csv (Multiple Connections)' name='federated.047x84k0bchto01207z4x1aplc1l' />
+          </datasources>
+          <datasource-dependencies datasource='federated.047x84k0bchto01207z4x1aplc1l'>
+            <column-instance column='[e_gdp]' derivation='Avg' name='[avg:e_gdp:qk]' pivot='key' type='quantitative' />
+            <column caption='Country Name' datatype='string' name='[country_name]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='E Gdp' datatype='real' name='[e_gdp]' role='measure' type='quantitative' />
+            <column-instance column='[country_name]' derivation='None' name='[none:country_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[v2x_polyarchy]' derivation='Sum' name='[sum:v2x_polyarchy:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[year]' derivation='Year-Trunc' name='[tyr:year:qk]' pivot='key' type='quantitative' />
+            <column caption='V2X Polyarchy' datatype='real' name='[v2x_polyarchy]' role='measure' type='quantitative' />
+            <column caption='Year' datatype='date' name='[year]' role='dimension' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;Canada&quot;' />
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;Iran&quot;' />
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;Mongolia&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.047x84k0bchto01207z4x1aplc1l].[avg:e_gdp:qk]' field-type='quantitative' fold='true' scope='rows' type='space' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]' />
+            </encodings>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.047x84k0bchto01207z4x1aplc1l].[sum:v2x_polyarchy:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]' />
+            </encodings>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.047x84k0bchto01207z4x1aplc1l].[avg:e_gdp:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>([federated.047x84k0bchto01207z4x1aplc1l].[sum:v2x_polyarchy:qk] + [federated.047x84k0bchto01207z4x1aplc1l].[avg:e_gdp:qk])</rows>
+        <cols>[federated.047x84k0bchto01207z4x1aplc1l].[tyr:year:qk]</cols>
+      </table>
+      <simple-id uuid='{C9F753C7-0107-46F1-ABB9-6EA6B6555604}' />
+    </worksheet>
+    <worksheet name='Max_GDP_Map'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='V_Dem_Filtered.csv (Multiple Connections)' name='federated.047x84k0bchto01207z4x1aplc1l' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.047x84k0bchto01207z4x1aplc1l'>
+            <column caption='Country Name' datatype='string' name='[country_name]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column caption='E Gdp' datatype='real' name='[e_gdp]' role='measure' type='quantitative' />
+            <column-instance column='[e_gdp]' derivation='Max' name='[max:e_gdp:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[country_name]' derivation='None' name='[none:country_name:nk]' pivot='key' type='nominal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.047x84k0bchto01207z4x1aplc1l].[max:e_gdp:qk]' palette='Max_GDP_Dif' type='interpolated' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <lod column='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]' />
+              <color column='[federated.047x84k0bchto01207z4x1aplc1l].[max:e_gdp:qk]' />
+              <geometry column='[federated.047x84k0bchto01207z4x1aplc1l].[Geometry (generated)]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.047x84k0bchto01207z4x1aplc1l].[Latitude (generated)]</rows>
+        <cols>[federated.047x84k0bchto01207z4x1aplc1l].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{4CC6A2EE-1B37-4B79-B791-6FDB47FF4A7B}' />
+    </worksheet>
+    <worksheet name='Regime_Index_Map'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='V_Dem_Filtered.csv (Multiple Connections)' name='federated.047x84k0bchto01207z4x1aplc1l' />
+          </datasources>
+          <mapsources>
+            <mapsource name='Tableau' />
+          </mapsources>
+          <datasource-dependencies datasource='federated.047x84k0bchto01207z4x1aplc1l'>
+            <column-instance column='[v2x_regime]' derivation='Avg' name='[avg:v2x_regime:qk]' pivot='key' type='quantitative' />
+            <column caption='Country Name' datatype='string' name='[country_name]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column-instance column='[country_name]' derivation='None' name='[none:country_name:nk]' pivot='key' type='nominal' />
+            <column caption='V2X Regime' datatype='integer' name='[v2x_regime]' role='measure' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <encoding attr='space' class='0' field='[federated.047x84k0bchto01207z4x1aplc1l].[Longitude (generated)]' field-type='quantitative' max='28918806.49714943' min='-22491773.552932471' projection='EPSG:3857' range-type='fixed' scope='cols' type='space' />
+            <encoding attr='space' class='0' field='[federated.047x84k0bchto01207z4x1aplc1l].[Latitude (generated)]' field-type='quantitative' max='16769323.221065588' min='-9256230.0325917397' projection='EPSG:3857' range-type='fixed' scope='rows' type='space' />
+          </style-rule>
+          <style-rule element='mark'>
+            <encoding attr='color' field='[federated.047x84k0bchto01207z4x1aplc1l].[avg:v2x_regime:qk]' palette='red_green_gold_diverging_10_0' type='interpolated' />
+          </style-rule>
+          <style-rule element='map'>
+            <format attr='washout' value='0.0' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <lod column='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]' />
+              <color column='[federated.047x84k0bchto01207z4x1aplc1l].[avg:v2x_regime:qk]' />
+              <geometry column='[federated.047x84k0bchto01207z4x1aplc1l].[Geometry (generated)]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.047x84k0bchto01207z4x1aplc1l].[Latitude (generated)]</rows>
+        <cols>[federated.047x84k0bchto01207z4x1aplc1l].[Longitude (generated)]</cols>
+      </table>
+      <simple-id uuid='{D310B748-68FC-431D-9DCD-47C3D0C49B29}' />
+    </worksheet>
+    <worksheet name='Regime_Years'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='V_Dem_Filtered.csv (Multiple Connections)' name='federated.047x84k0bchto01207z4x1aplc1l' />
+          </datasources>
+          <datasource-dependencies datasource='federated.047x84k0bchto01207z4x1aplc1l'>
+            <column-instance column='[v2x_regime]' derivation='Avg' name='[avg:v2x_regime:qk]' pivot='key' type='quantitative' />
+            <column caption='Country Name' datatype='string' name='[country_name]' role='dimension' semantic-role='[Country].[ISO3166_2]' type='nominal' />
+            <column-instance column='[country_name]' derivation='None' name='[none:country_name:nk]' pivot='key' type='nominal' />
+            <column-instance column='[year]' derivation='Year-Trunc' name='[tyr:year:qk]' pivot='key' type='quantitative' />
+            <column caption='V2X Regime' datatype='integer' name='[v2x_regime]' role='measure' type='quantitative' />
+            <column caption='Year' datatype='date' name='[year]' role='dimension' type='quantitative' />
+          </datasource-dependencies>
+          <filter class='categorical' column='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]'>
+            <groupfilter function='union' user:ui-domain='database' user:ui-enumeration='inclusive' user:ui-marker='enumerate'>
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;Afghanistan&quot;' />
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;Germany&quot;' />
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;Hungary&quot;' />
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;Iran&quot;' />
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;Iraq&quot;' />
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;Israel&quot;' />
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;Japan&quot;' />
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;Mongolia&quot;' />
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;North Korea&quot;' />
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;Russia&quot;' />
+              <groupfilter function='member' level='[none:country_name:nk]' member='&quot;Ukraine&quot;' />
+            </groupfilter>
+          </filter>
+          <slices>
+            <column>[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]</column>
+          </slices>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.047x84k0bchto01207z4x1aplc1l].[avg:v2x_regime:qk]</rows>
+        <cols>[federated.047x84k0bchto01207z4x1aplc1l].[tyr:year:qk]</cols>
+      </table>
+      <simple-id uuid='{86C06A73-180A-4B70-85C1-785F4FBFD447}' />
+    </worksheet>
+  </worksheets>
+  <windows show-side-pane='false' source-height='30'>
+    <window class='worksheet' name='21st_C_AVG_GDP_PC_Map'>
+      <cards>
+        <edge name='left'>
+          <strip size='100'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='2' param='[federated.047x84k0bchto01207z4x1aplc1l].[avg:e_gdppc:qk]' type='color' />
+            <card param='[federated.047x84k0bchto01207z4x1aplc1l].[none:year:qk]' show-domain='false' show-null-ctrls='false' type='filter' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <default-map-tool-selection tool='1' />
+      </viewpoint>
+      <simple-id uuid='{F56F19C1-90DF-48E5-ABFE-C563413F6821}' />
+    </window>
+    <window class='worksheet' name='Max_GDP_Map'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='0' param='[federated.047x84k0bchto01207z4x1aplc1l].[max:e_gdp:qk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{14AEF540-E224-4BF9-8E50-50E46A796411}' />
+    </window>
+    <window class='worksheet' name='Regime_Index_Map'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='0' param='[federated.047x84k0bchto01207z4x1aplc1l].[avg:v2x_regime:qk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <default-map-tool-selection tool='1' />
+      </viewpoint>
+      <simple-id uuid='{F56C92F1-1D37-48F5-A4BA-98C3A458B0CD}' />
+    </window>
+    <window class='worksheet' name='Elect_Dem_Score_Map'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='0' param='[federated.047x84k0bchto01207z4x1aplc1l].[avg:v2x_polyarchy:qk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <default-map-tool-selection tool='1' />
+      </viewpoint>
+      <simple-id uuid='{E7E88F86-27FE-4F03-B3F1-BBFF30F64DE6}' />
+    </window>
+    <window class='worksheet' name='GDP_PC_Regime_Scatter'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]' type='filter' />
+            <card pane-specification-id='0' param='[federated.047x84k0bchto01207z4x1aplc1l].[__tableau_internal_object_id__].[cnt:V_Dem_Filtered.csv_A0E388EE5B6843F29F5E593A677D1E77:ok]' type='color' />
+            <card pane-specification-id='0' param='[federated.047x84k0bchto01207z4x1aplc1l].[avg:v2x_regime:qk]' type='size' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{FFBC50B2-8457-4739-BB82-A13DA007E1D6}' />
+    </window>
+    <window class='worksheet' name='GDP_PC_Dem_Bar'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+            <card pane-specification-id='2' param='[federated.047x84k0bchto01207z4x1aplc1l].[avg:v2x_polyarchy:qk]' type='color' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{D40CDC9D-CBDD-4EBE-A426-8CFB98D5E7A9}' />
+    </window>
+    <window class='worksheet' name='GDP_PC_Trends'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]' type='filter' />
+            <card pane-specification-id='1' param='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{8DF3B3FC-9443-4750-92A2-A2F78D4F510D}' />
+    </window>
+    <window class='worksheet' name='Dem_Trends'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]' type='filter' />
+            <card pane-specification-id='2' param='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{E04D93A7-7035-4E73-B04A-63D422B4198C}' />
+    </window>
+    <window class='worksheet' name='GDP_Polyarchy_Lines'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]' type='filter' />
+            <card pane-specification-id='1' param='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{1F33D1DE-EF4C-422C-9E22-A6A1639B66A3}' />
+    </window>
+    <window class='worksheet' name='Countries_GDP_Years'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{9C2ED6ED-C2A1-4415-8D68-82645CF382C9}' />
+    </window>
+    <window class='worksheet' name='Electoral_Dem_Index'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card param='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]' type='filter' />
+            <card pane-specification-id='2' param='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{7DEFE771-40A3-4944-8866-0F9F37E203FE}' />
+    </window>
+    <window class='worksheet' maximized='true' name='Regime_Years'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.047x84k0bchto01207z4x1aplc1l].[none:country_name:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{475D1918-8991-45BF-AC54-3AC2383DE869}' />
+    </window>
+  </windows>
+</workbook>
